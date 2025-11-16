@@ -6,7 +6,7 @@
 /*   By: skoulal <skoulal@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 23:43:04 by skoulal           #+#    #+#             */
-/*   Updated: 2025/11/16 11:14:06 by skoulal          ###   ########.fr       */
+/*   Updated: 2025/11/16 11:39:48 by skoulal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int	main(void)
-// {
-// 	printf("\n %d \n", ft_printf("%p", "salam" ));
-// 	printf("\n %d \n", printf("%p", "salam" ));
-// 	return (0);
-// }
+int	main(void)
+{
+	printf("\n %d \n", ft_printf("%s", NULL));
+	printf("\n %d \n", printf("%p", "salam" ));
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: skoulal <skoulal@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 00:04:10 by skoulal           #+#    #+#             */
-/*   Updated: 2025/11/16 10:26:58 by skoulal          ###   ########.fr       */
+/*   Updated: 2025/11/16 11:40:26 by skoulal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putstr(char *s)
 
 	i = 0;
 	if (!s)
-		return (ft_putstr("(null)"));
+		return (write(1,"(null)", 6));
 	while (s[i])
 	{
 		write(1, &s[i], 1);
