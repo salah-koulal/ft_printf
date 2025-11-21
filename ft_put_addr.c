@@ -6,7 +6,7 @@
 /*   By: skoulal <skoulal@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 00:23:49 by skoulal           #+#    #+#             */
-/*   Updated: 2025/11/16 11:18:30 by skoulal          ###   ########.fr       */
+/*   Updated: 2025/11/20 19:27:06 by skoulal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,14 @@ static int	into_hex(unsigned long nb, char *base)
 	return (c);
 }
 
-int	ft_put_addr(void *p)
+int	ft_put_address(unsigned long p)
 {
 	int				c;
-	unsigned long	address;
 
 	c = 0;
-	address = (unsigned long)p;
-	if (p == NULL)
-		return (ft_putstr("0x0"));
+	if (p == 0)
+		return (ft_putstr("(nil)"));
 	c = ft_putstr("0x");
-	c += into_hex(address, "0123456789abcdef");
+	c += into_hex(p, "0123456789abcdef");
 	return (c);
 }

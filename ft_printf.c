@@ -6,7 +6,7 @@
 /*   By: skoulal <skoulal@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 23:43:04 by skoulal           #+#    #+#             */
-/*   Updated: 2025/11/16 11:39:48 by skoulal          ###   ########.fr       */
+/*   Updated: 2025/11/20 21:17:27 by skoulal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_find_format(char format, va_list args)
 	else if (format == 's')
 		len = ft_putstr(va_arg(args, char *));
 	else if (format == 'x' || format == 'X')
-		len = ft_put_hex(va_arg(args, unsigned long), format);
+		len = ft_put_hex(va_arg(args, unsigned int), format);
 	else if (format == '%')
 		len = ft_putchar('%');
 	else if (format == 'd' || format == 'i')
@@ -30,7 +30,7 @@ static int	ft_find_format(char format, va_list args)
 	else if (format == 'u')
 		len = ft_put_unsigned(va_arg(args, unsigned int));
 	else if (format == 'p')
-		len = ft_put_addr(va_arg(args, void *));
+		len = ft_put_address(va_arg(args, unsigned long));
 	return (len);
 }
 
@@ -56,13 +56,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (count);
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("\n %d \n", ft_printf("%s", NULL));
-	printf("\n %d \n", printf("%p", "salam" ));
-	return (0);
 }
